@@ -14,6 +14,7 @@ cd your_project_name
 ...
 
 # Install dependencies and use Chrome extension [Moesif](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc) to change CORS
+# and install Chrome extension [live-server](https://chrome.google.com/webstore/detail/web-server-for-chrome/)
 yarn install
 
 # Now you can run yarn command:
@@ -22,5 +23,7 @@ yarn esbuild-main:watch
 ```
 
 # Build for browsers
+```
 yarn esbuild-main:dev
 yarn esbuild-main:watch
+```

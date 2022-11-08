@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
-import {AvailabilityType, RoomItem} from "./types";
+import { AvailabilityType, RoomItem } from "./types";
 import styled from "styled-components";
-import {api} from "./api";
-import {AVAILABILITY_URL} from "./constants";
+import { api } from "./api";
+import { AVAILABILITY_URL } from "./constants";
 
 const ListItem = styled.li`
 	list-style: none;
@@ -11,7 +11,14 @@ const ListItem = styled.li`
 const Bold = styled.b`
 	font-weight: 600;
 	color: #FF5533;
-	padding: 0 5px;
+	padding: 0 3px;
+`;
+
+const Button = styled.button`
+	display: inline-flex;
+	border: 1px solid grey;
+	background: lightgrey;
+	margin: 0 8px;
 `;
 
 const sortByPrice = (rooms: RoomItem[]) => {
@@ -53,6 +60,7 @@ export const List = (data: RoomItem[]) => {
 							<Bold>{availabilityData?.price?.currencyCode ?? ''}</Bold>
 						</span>
 					)}
+					{room?.id === selectRoom ? <Button type="button" onClick={() => console.log(`Enter the order for the room ${room?.id === selectRoom && room.name}.`)}>Order</Button> : ''}
 				</ListItem>
 			);
 		}
