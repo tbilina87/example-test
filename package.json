@@ -1,7 +1,7 @@
 {
-  "name": "typescript-boilerplate-2021",
+  "name": "invia-test",
   "version": "0.4.2",
-  "description": "Boilerplate for TypeScript projects (Node.js and browser modules)",
+  "description": "Boilerplate for TypeScript projects (Node.js and main modules)",
   "author": "Chris Hager <chris@linuxuser.at>",
   "repository": "https://github.com/metachris/typescript-boilerplate",
   "license": "MIT",
@@ -12,7 +12,6 @@
   ],
   "main": "./dist/tsc/main.js",
   "types": "./dist/tsc/main.d.ts",
-  "browser": "./dist/esbuild/browser.js",
   "bin": {
     "my-cli-tool": "./dist/esbuild/cli.js"
   },
@@ -22,15 +21,23 @@
     "test": "jest",
     "clean": "rm -rf dist build package",
     "ts-node": "ts-node",
-    "docs": "typedoc --entryPoints src/main.ts",
+    "docs": "typedoc --entryPoints src/main.tsxx",
     "build": "tsc -p tsconfig.json",
-    "build-all": "yarn clean && yarn build && yarn esbuild-node && yarn esbuild-browser",
-    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
-    "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js",
-    "esbuild-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/esbuild/browser.js",
+    "build-all": "yarn clean && yarn build && yarn esbuild-node && yarn esbuild-main",
+    "esbuild-main": "esbuild src/main.tsx --bundle --minify --sourcemap=external --outfile=dist/esbuild/main.js",
+    "esbuild-main:dev": "esbuild src/main.tsx --bundle --outfile=dist/esbuild/main.js",
+    "esbuild-main:watch": "esbuild src/main.tsx --bundle --watch --outfile=dist/esbuild/main.js",
     "esbuild-node": "esbuild src/cli.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/esbuild/cli.js",
     "esbuild-node:dev": "esbuild src/cli.ts --bundle --platform=node --sourcemap=external --outfile=dist/esbuild/cli.js",
     "esbuild-node:watch": "esbuild src/cli.ts --bundle --platform=node --watch --sourcemap=external --outfile=dist/esbuild/cli.js"
+  },
+  "dependencies": {
+    "@types/react-dom": "^18.0.8",
+    "@types/styled-components": "^5.1.26",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",

@@ -18,7 +18,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "outDir": "./dist/tsc/",
+    "outDir": "./dist/",
     "types": [
       "node",
       "jest"
@@ -26,7 +26,8 @@
     "lib": [
       "ES6",
       "DOM"
-    ]
+    ],
+    "jsx": "react"
   },
   "include": [
     "src/**/*.ts"

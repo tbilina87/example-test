@@ -34,7 +34,7 @@ yarn lint
 yarn test
 yarn build-all
 yarn ts-node <filename>
-yarn esbuild-browser
+yarn esbuild-main
 ...
 ```
 
@@ -47,8 +47,8 @@ yarn esbuild-browser
 
 ```bash
 # Build for browsers
-yarn esbuild-browser:dev
-yarn esbuild-browser:watch
+yarn esbuild-main:dev
+yarn esbuild-main:watch
 
 # Build the cli for node
 yarn esbuild-node:dev
